@@ -6,6 +6,16 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    
+   """
+   Description:
+        Extracts, transforms, and loads JSON song and artist data into Postgres database
+    
+   Parameters:
+        cur (Psycopg2): Postgres cursor
+        filepath (string): Filepath to JSON file(s)
+   """
+    
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -19,6 +29,16 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+      
+   """
+   Description:
+        Extracts, transforms, and loads JSON log data into Postgres database
+    
+   Parameters:
+        cur (Psycopg2): Postgres cursor
+        filepath (string): Filepath to JSON file(s)
+   """
+
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -62,6 +82,17 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+          
+   """
+   Description:
+        Searches root directory for files with '.json' extension and iterates over them
+    
+   Parameters:
+        cur (Psycopg2): Postgres cursor
+        conn (Psycopg2): Postgres connection
+        filepath (string): filepath to JSON files
+   """
+    
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
