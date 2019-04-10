@@ -8,10 +8,10 @@ The Data Modeling with Postgres project is part of the Udacity's Data Engineerin
     - To run the Postgres database and table creation script
         `run create_tables.py`
         
-    - To run ETL pipeline that cleans the data and stores it in the database
+    - To run ETL pipeline that cleans the data and stored it in the database
         `run etl.py`
         
-    - To test that both scripts python scripts ran correctly
+    - To test that both scripts ran correctly
         `run test.ipynb`    
 
 
